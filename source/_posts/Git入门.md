@@ -1,4 +1,5 @@
 ## 1. 创建版本库
+
 1. 创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：
 2. 通过git init命令把这个目录变成Git可以管理的仓库
 3. 瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），
@@ -6,7 +7,8 @@
    没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。
 
 ## 2. 版本库添加文件
-　1. 用命令git add告诉Git，把文件添加到仓库:　git　add　readme.txt
+
+1. 用命令git add告诉Git，把文件添加到仓库:　git　add　readme.txt
 2. 提交文件: git commit -m "add 3 files."
 
 ## 3. 查看当前仓库状态
