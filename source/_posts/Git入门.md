@@ -8,11 +8,11 @@
    没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。
 
 ## 2. 版本库添加文件
-1. 用命令git add告诉Git，把文件添加到仓库：git add readme.txt
-2. 提交文件：git commit -m "add 3 files."
+1. 用命令git add告诉Git，把文件添加到仓库: git add readme.txt
+2. 提交文件: git commit -m "add 3 files."
 
 ## 3. 查看当前仓库状态
-**git status**：命令可以让我们时刻掌握仓库当前的状态
+**git status**: 命令可以让我们时刻掌握仓库当前的状态
 
 ## 4. 查看差异
    git diff readme.txt 
