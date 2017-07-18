@@ -9,14 +9,14 @@
 
 ## 2. 版本库添加文件　　
 
-1. 用命令git add告诉Git，把文件添加到仓库:　git　add　readme.txt
-2. 提交文件: git commit -m "add 3 files."
+1. 用命令git add告诉Git，把文件添加到仓库:git　add　readme.txt
+2. 提交文件:git commit -m "add 3 files."
 
 ## 3. 查看当前仓库状态
 **git status**: 命令可以让我们时刻掌握仓库当前的状态
 
 ## 4. 查看差异
-   git diff readme.txt 
+   git diff readme.txt
 
 ## 5. 查看历史版本记录
 **git log**命令显示从最近到最远的提交日志
@@ -40,7 +40,7 @@
 1. 最新的那个版本append GPL已经看不到了！好比你从21世纪坐时光穿梭机来到了19世纪，想再回去已经回不去了，肿么办？
 
 2. 只要右侧环境还在，就可以找到那个append GPL的commit id是3628164...，于是就可以指定回到未来的某个版本：
-    
+
     $ git reset --hard 3628164
     HEAD is now at 3628164 append GPL
 
@@ -56,7 +56,7 @@ $ cat readme.txt.
 工作区：就是你在电脑里能看到的目录,learngit文件夹就是一个工作区，比如我们环境中当前的目录。
 
 ## 11. 版本库和暂存区
-1. **版本库**: 工作区有一个隐藏目录.git 这个不算工作区，而是Git的版本库。
+1. **版本库**:工作区有一个隐藏目录.git 这个不算工作区，而是Git的版本库。
 
 1. **暂存区**：英文叫stage,或index。一般存放在git 目录下的index文件(.git/index)中，所以我们把暂存区时也叫作索引(index).
 
@@ -95,7 +95,7 @@ $ cat readme.txt.
 1. 已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过**前提是没有推送到远程库**
 
 ## 16. 删除文件
-   
+
 
 1.  `rm test.txt`：　命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
 2.  这个时候，Git知道你删除了文件，因此，工作区和版本库就不一致了，git status命令会立刻告诉你哪些文件被删除了：
@@ -137,7 +137,7 @@ $ cat readme.txt.
 
 1. 从远程库克隆,就需要我们先创建远程库，在github创建一个新的gitskills仓库，我们勾选Initialize this repository with a README，这样GitHub会自动为我们创建一个README.md文件。创建完毕后，可以看到README.md文件：`git clone git@github.com:michaelliao/gitskills.git`
 
-1. 你也许还注意到，GitHub给出的地址不止一个，还可以用github.com/onlyone/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git: //使用ssh，但也可以使用https等其他协议。
+1. 你也许还注意到，GitHub给出的地址不止一个，还可以用github.com/onlyone/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
 
 1. 注意：要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
 
@@ -197,11 +197,6 @@ $ cat readme.txt.
 
 ## 29. 解决冲突
 - Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，执行git merge feature1,在看readme.txt：
-	- <<<<<<< HEAD
-	- Creating a new branch is quick & simple.
-	- =======
-	- Creating a new branch is quick AND simple.
-	- >>>>>>> feature1
 - 我们把冲突的内容修改为Creating a new branch is quick and simple.，提交：
 	- `$ git add readme.txt `
 	- `$ git commit -m "conflict fixed"`
@@ -217,7 +212,7 @@ $ cat readme.txt.
 	- 　　`$ git checkout -b issue-101`
 
 - 　现在修复bug，需要把“Git is free software ...”改为“Git is a free software ...”，然后提交：
-	- 　`$ git add readme.txt` 
+	- 　`$ git add readme.txt`
 	- 　`$ git commit -m "fix bug 101"`
 - 　修复完成后，切换到master分支，并完成合并，最后删除issue-101分支：
 	- 　`$ git checkout master`
@@ -229,7 +224,7 @@ $ cat readme.txt.
 	- 　另一种方式是用git stash pop，恢复的同时把stash内容也删了：
 ## 30. Feature分支
 - 在软件开发中，总会添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。
-- 现在新功能开发代号为Vulcan: `$ git checkout -b feature-vulcan`
+- 现在新功能开发代号为Vulcan:`$ git checkout -b feature-vulcan`
 - 开发完毕，添加并提交：
 	- `$ git add vulcan.py`
 	- `$ git commit -m "add feature vulcan"`
@@ -247,7 +242,7 @@ $ cat readme.txt.
 - 　当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程仓库的默认名称是origin。
 - 　　要查看远程库的信息，用`git remote`,或者，用`git remote -v`显示更详细的信息：
 - 　　推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上： `git push origin master`
-- 　　　如果要推送其他分支，比如dev，就改成: `git push origin dev`
+- 　　　如果要推送其他分支，比如dev，就改成:`git push origin dev`
 - 　　　分支总结
 	- 　　　master分支是主分支，因此要时刻与远程同步；
 	- 　　　dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
@@ -346,9 +341,9 @@ $ cat readme.txt.
 - 第三步，创建证书登录：收集所有需要登录的用户的公钥，就是他们自己的id_rsa.pub文件，把所有公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。
 
 - 第四步，初始化Git仓库：先选定一个目录作为Git仓库，假定是/srv/sample.git，在/srv目录下输入命令：`$ sudo git init --bare sample.git`
-- 　Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：`$ sudo chown -R git: git sample.git`
+- Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：`$ sudo chown -R git:git sample.git`
 
-- 第五步，禁用shell登录：出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：`git: x: 1001: 1001:,,,: /home/git: /bin/bash`
+- 第五步，禁用shell登录：出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：`git:x:1001:1001:,,,:/home/git:/bin/bash`
 - 改为：`git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell`
 - 这样，git用户可以正常通过ssh使用git，但无法登录shell，因为我们为git用户指定的git-shell每次一登录就自动退出。
 
@@ -366,12 +361,3 @@ $ cat readme.txt.
 	- 要像SVN那样变态地控制权限，用Gitolite。
 
 ...
-
-
-
-
-
-
-
-
-
