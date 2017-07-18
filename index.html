@@ -231,11 +231,11 @@
 <li>瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），<br>细心的读者可以发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，<br>没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</li>
 </ol>
 <h2 id="2-版本库添加文件"><a href="#2-版本库添加文件" class="headerlink" title="2. 版本库添加文件　　"></a>2. 版本库添加文件　　</h2><ol>
-<li>用命令git add告诉Git，把文件添加到仓库:　git　add　readme.txt</li>
-<li>提交文件: git commit -m “add 3 files.”</li>
+<li>用命令git add告诉Git，把文件添加到仓库:git　add　readme.txt</li>
+<li>提交文件:git commit -m “add 3 files.”</li>
 </ol>
 <h2 id="3-查看当前仓库状态"><a href="#3-查看当前仓库状态" class="headerlink" title="3. 查看当前仓库状态"></a>3. 查看当前仓库状态</h2><p><strong>git status</strong>: 命令可以让我们时刻掌握仓库当前的状态</p>
-<h2 id="4-查看差异"><a href="#4-查看差异" class="headerlink" title="4. 查看差异"></a>4. 查看差异</h2><p>   git diff readme.txt </p>
+<h2 id="4-查看差异"><a href="#4-查看差异" class="headerlink" title="4. 查看差异"></a>4. 查看差异</h2><p>   git diff readme.txt</p>
 <h2 id="5-查看历史版本记录"><a href="#5-查看历史版本记录" class="headerlink" title="5. 查看历史版本记录"></a>5. 查看历史版本记录</h2><p><strong>git log</strong>命令显示从最近到最远的提交日志</p>
 <h2 id="6-版本回退"><a href="#6-版本回退" class="headerlink" title="6. 版本回退"></a>6. 版本回退</h2><p>每提交一个新版本，实际上Git就会把它们自动串成一条时间线。现在准备把readme.txt回退到上一个版本，也就是“add distributed”的那个版本，怎么做呢？</p>
 <p>　　</p>
@@ -259,7 +259,7 @@
 </ol>
 <h2 id="10-工作区"><a href="#10-工作区" class="headerlink" title="10. 工作区"></a>10. 工作区</h2><p>工作区：就是你在电脑里能看到的目录,learngit文件夹就是一个工作区，比如我们环境中当前的目录。</p>
 <h2 id="11-版本库和暂存区"><a href="#11-版本库和暂存区" class="headerlink" title="11. 版本库和暂存区"></a>11. 版本库和暂存区</h2><ol>
-<li><p><strong>版本库</strong>: 工作区有一个隐藏目录.git 这个不算工作区，而是Git的版本库。</p>
+<li><p><strong>版本库</strong>:工作区有一个隐藏目录.git 这个不算工作区，而是Git的版本库。</p>
 </li>
 <li><p><strong>暂存区</strong>：英文叫stage,或index。一般存放在git 目录下的index文件(.git/index)中，所以我们把暂存区时也叫作索引(index).</p>
 </li>
@@ -340,7 +340,7 @@
 <h2 id="22-从远程库克隆"><a href="#22-从远程库克隆" class="headerlink" title="22. 从远程库克隆"></a>22. 从远程库克隆</h2><ol>
 <li><p>从远程库克隆,就需要我们先创建远程库，在github创建一个新的gitskills仓库，我们勾选Initialize this repository with a README，这样GitHub会自动为我们创建一个README.md文件。创建完毕后，可以看到README.md文件：<code>git clone git@github.com:michaelliao/gitskills.git</code></p>
 </li>
-<li><p>你也许还注意到，GitHub给出的地址不止一个，还可以用github.com/onlyone/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git: //使用ssh，但也可以使用https等其他协议。</p>
+<li><p>你也许还注意到，GitHub给出的地址不止一个，还可以用github.com/onlyone/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。</p>
 </li>
 <li><p>注意：要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。</p>
 </li>
@@ -400,29 +400,7 @@
 <li>此时，如果master和feature1合并，那么就可能产生冲突</li>
 </ol>
 <h2 id="29-解决冲突"><a href="#29-解决冲突" class="headerlink" title="29. 解决冲突"></a>29. 解决冲突</h2><ul>
-<li>Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，执行git merge feature1,在看readme.txt：<ul>
-<li>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
-<li>Creating a new branch is quick &amp; simple.</li>
-<li>=======</li>
-<li>Creating a new branch is quick AND simple.</li>
-<li><blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>feature1</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-</li>
+<li>Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，执行git merge feature1,在看readme.txt：</li>
 <li><p>我们把冲突的内容修改为Creating a new branch is quick and simple.，提交：</p>
 <ul>
 <li><code>$ git add readme.txt</code></li>
@@ -444,7 +422,7 @@
 </li>
 <li><p>　现在修复bug，需要把“Git is free software …”改为“Git is a free software …”，然后提交：</p>
 <ul>
-<li>　<code>$ git add readme.txt</code> </li>
+<li>　<code>$ git add readme.txt</code></li>
 <li>　<code>$ git commit -m &quot;fix bug 101&quot;</code></li>
 </ul>
 </li>
@@ -462,7 +440,7 @@
 </ul>
 </li>
 <li>在软件开发中，总会添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。</li>
-<li>现在新功能开发代号为Vulcan: <code>$ git checkout -b feature-vulcan</code></li>
+<li>现在新功能开发代号为Vulcan:<code>$ git checkout -b feature-vulcan</code></li>
 <li><p>开发完毕，添加并提交：</p>
 <ul>
 <li><code>$ git add vulcan.py</code></li>
@@ -483,7 +461,7 @@
 <li>　当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程仓库的默认名称是origin。</li>
 <li>　　要查看远程库的信息，用<code>git remote</code>,或者，用<code>git remote -v</code>显示更详细的信息：</li>
 <li>　　推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上： <code>git push origin master</code></li>
-<li>　　　如果要推送其他分支，比如dev，就改成: <code>git push origin dev</code></li>
+<li>　　　如果要推送其他分支，比如dev，就改成:<code>git push origin dev</code></li>
 <li>　　　分支总结<ul>
 <li>　　　master分支是主分支，因此要时刻与远程同步；</li>
 <li>　　　dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
@@ -604,9 +582,9 @@
 </li>
 <li><p>第四步，初始化Git仓库：先选定一个目录作为Git仓库，假定是/srv/sample.git，在/srv目录下输入命令：<code>$ sudo git init --bare sample.git</code></p>
 </li>
-<li><p>　Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：<code>$ sudo chown -R git: git sample.git</code></p>
+<li><p>Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上的Git仓库纯粹是为了共享，所以不让用户直接登录到服务器上去改工作区，并且服务器上的Git仓库通常都以.git结尾。然后，把owner改为git：<code>$ sudo chown -R git:git sample.git</code></p>
 </li>
-<li><p>第五步，禁用shell登录：出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：<code>git: x: 1001: 1001:,,,: /home/git: /bin/bash</code></p>
+<li><p>第五步，禁用shell登录：出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：<code>git:x:1001:1001:,,,:/home/git:/bin/bash</code></p>
 </li>
 <li>改为：<code>git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</code></li>
 <li><p>这样，git用户可以正常通过ssh使用git，但无法登录shell，因为我们为git用户指定的git-shell每次一登录就自动退出。</p>
