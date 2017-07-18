@@ -1,3 +1,7 @@
+
+---
+---
+title: Git入门
 ---
 ## 1. 创建版本库
 
@@ -76,9 +80,6 @@ $ cat readme.txt.
 
 
 - 如果你在readme.txt中加入了一行文件，又感觉不好，你可以删除新加的，恢复到原来的。
-
-
-
 - Git会告诉你，git checkout -- file可以丢弃工作区的修改：
 - `git checkout -- readme.txt`
 - 意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
