@@ -40,7 +40,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -64,25 +64,6 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: maupassant
-
-jsonContent:
-   meta: false
-   pages: false
-   posts:
-   title: true
-   date: true
-   path: true
-   text: false
-   raw: false
-   content: false
-   slug: false
-   updated: false
-   comments: false
-   link: false
-   permalink: false
-   excerpt: false
-   categories: false
-   tags: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
