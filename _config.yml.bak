@@ -4,9 +4,9 @@
 
 # Site
 title: Mr.Okey
-subtitle:
+subtitle: 既然青春留不住，还是做大叔好！
 description: do your best
-author: John Haozi
+author: Haozi
 language: zh-CN
 timezone:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: hexo-theme-spfk
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
