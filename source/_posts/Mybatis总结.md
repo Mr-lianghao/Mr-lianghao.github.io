@@ -1,7 +1,7 @@
 ---
 title: SpringMVC 总结
 date: 2017-07-12 15:08:32
-categories:
+categories: "Mybatis教程"
 tags:
      - SpringMVC
      - 持久层
