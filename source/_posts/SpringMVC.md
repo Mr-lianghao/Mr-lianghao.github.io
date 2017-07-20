@@ -1,6 +1,7 @@
 ---
 title: SpringMVC 第一天
-categories: "SpringMVC"
+categories: 
+ - SpringMVC
 tags:
      - Spring
 ---
