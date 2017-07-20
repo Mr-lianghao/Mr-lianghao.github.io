@@ -1,61 +1,47 @@
-extends base
-
-block title
-  title= page.title + ' | ' + config.title
-
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('ll')
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-    if theme.duoshuo
-      a.ds-thread-count(data-thread-key=page.path, href=url_for(page.path) + '#comments')
-    if theme.disqus
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.gentie
-      a.ds-thread-count(class='cloud-tie-join-count', href=url_for(page.path) + '#comments')
-        span.join-count(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Discuss')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url='#{page.permalink}', data-id='#{page._id}')= __('shareto')
-    include _partial/tag
-    include _partial/post_nav
-    if theme.duoshuo
-      div(class='ds-share flat' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
-         .ds-share-inline
-            ul.ds-share-icons-16
-              li(data-toggle='ds-share-icons-more')
-                a(class='ds-more' href='javascript:void(0);') 分享到：
-              li
-                a(class='ds-weibo' href='javascript:void(0);' data-service='weibo') 微博
-              li
-                a(class='ds-qzone' href='javascript:void(0);' data-service='qzone') QQ空间
-              li
-                a(class='ds-qqt' href='javascript:void(0);' data-service='qqt') 腾讯微博
-              li
-                a(class='ds-wechat' href='javascript:void(0);' data-service='wechat') 微信
-            .ds-share-icons-more
-    if page.comments
-      include _partial/comments
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="do your best"><title> | Mr.Okey</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Mr.Okey</h1><a id="logo" href="/.">Mr.Okey</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">Jul 19, 2017<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="Mybatis所处的位置"><a href="#Mybatis所处的位置" class="headerlink" title="Mybatis所处的位置"></a>Mybatis所处的位置</h2><p>Mybatis处在持久层，和数据库打交道</p>
+<h2 id="为什么需要Mybatis"><a href="#为什么需要Mybatis" class="headerlink" title="为什么需要Mybatis"></a>为什么需要Mybatis</h2><p>引入MyBatis的目的：主要是为了弥补JDBC的硬编码问题：</p>
+<ol>
+<li>解决频发链接数据库</li>
+<li>解决sql代码的硬编码</li>
+<li>解决占位符硬编码</li>
+<li>解决结果集硬编码</li>
+</ol>
+<h2 id="我们使用Mybatis需要做的事"><a href="#我们使用Mybatis需要做的事" class="headerlink" title="我们使用Mybatis需要做的事"></a>我们使用Mybatis需要做的事</h2><ol>
+<li>配置SqlMapConfig.xml，Mybatis全局配置文件</li>
+<li>mapper.xml,存放sql语句的文件</li>
+<li>通过sqlSessionFactory获取session进行操作，但这些都是Mybatis环境帮我们做的</li>
+</ol>
+<h2 id="入门程序"><a href="#入门程序" class="headerlink" title="入门程序"></a>入门程序</h2><ol>
+<li>导入jar包</li>
+<li>log4j</li>
+<li>SqlMapConfig.xml全局环境变量的配置</li>
+<li>po类</li>
+<li>编写po类的映射文件，也就是编写sql语句的</li>
+<li>在全局配置文件中加载映射文件</li>
+<li>根据业务需求，在映射文件中编写相应的sql语句</li>
+<li>编写程序进行测试</li>
+</ol>
+<h2 id="Mybatis和Hibernate的区别"><a href="#Mybatis和Hibernate的区别" class="headerlink" title="Mybatis和Hibernate的区别"></a>Mybatis和Hibernate的区别</h2><h2 id="SqlSession和SqlSessionFactoryBuilder以及SqlSessionFactory"><a href="#SqlSession和SqlSessionFactoryBuilder以及SqlSessionFactory" class="headerlink" title="SqlSession和SqlSessionFactoryBuilder以及SqlSessionFactory"></a>SqlSession和SqlSessionFactoryBuilder以及SqlSessionFactory</h2><h2 id="在DAO中使用Mybatis进行开发"><a href="#在DAO中使用Mybatis进行开发" class="headerlink" title="在DAO中使用Mybatis进行开发"></a>在DAO中使用Mybatis进行开发</h2><ol>
+<li>传统方式：该方式需要定义dao接口和实现类<ol>
+<li>编写接口和实现类</li>
+<li>编写映射文件User.xml并根据需要，码上sql语句</li>
+</ol>
+</li>
+<li>传统方式存在的问题：<ol>
+<li>Dao方法体存在重复代码：通过SqlSessionFactory创建SqlSession，调用SqlSession的数据库操作方法</li>
+<li>调用sqlSession的数据库操作方法需要指定statement的id，这里存在硬编码，不利于开发维护。</li>
+</ol>
+</li>
+</ol>
+<h2 id="使用Mapper动态代理的方式"><a href="#使用Mapper动态代理的方式" class="headerlink" title="使用Mapper动态代理的方式"></a>使用Mapper动态代理的方式</h2><p>Mapper接口开发方法只需要程序员编写Mapper接口（相当于Dao接口），由Mybatis框架根据接口定义创建接口的动态代理对象，代理对象的方法体同上边Dao接口实现类方法。</p>
+<h3 id="Mapper代理方式需要遵循的规范："><a href="#Mapper代理方式需要遵循的规范：" class="headerlink" title="Mapper代理方式需要遵循的规范："></a>Mapper代理方式需要遵循的规范：</h3><ol>
+<li>Mapper.xml文件中的namespace与mapper接口的类路径相同。</li>
+<li>Mapper接口方法名和Mapper.xml中定义的每个statement的id相同</li>
+<li>Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql 的parameterType的类型相同</li>
+<li>Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType的类型相同</li>
+</ol>
+<h3 id="Mapper方式的开发步骤"><a href="#Mapper方式的开发步骤" class="headerlink" title="Mapper方式的开发步骤"></a>Mapper方式的开发步骤</h3><ol>
+<li>编写接口文件：UserMapper.java<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Public <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>&#123;</div><div class="line">	<span class="comment">//根据用户id查询用户信息</span></div><div class="line">	<span class="function"><span class="keyword">public</span> User <span class="title">findUserById</span><span class="params">(<span class="keyword">int</span> id)</span> <span class="keyword">throws</span> Exception</span>;</div><div class="line">	<span class="comment">//查询用户列表</span></div><div class="line">	<span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findUserByUsername</span><span class="params">(String username)</span> <span class="keyword">throws</span> Exception</span>;</div><div class="line">	<span class="comment">//添加用户信息</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertUser</span><span class="params">(User user)</span><span class="keyword">throws</span> Exception</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://yoursite.com/2017/07/19/Mybatis总结/" data-id="cj5bxvo3x0000x4mdr4evjlrg" class="article-share-link">分享</a><div class="tags"></div><div class="post-nav"><a href="/2017/07/17/Git入门/" class="next">Git入门</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/diary/" style="font-size: 15px;">diary</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/19/Mybatis总结/">Mybatis总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/Git入门/">Git入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/SpringMVC/">SpringMVC 第一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/博客发布/">Start My Blog Trip — Power By Hexo</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Mr.Okey.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
