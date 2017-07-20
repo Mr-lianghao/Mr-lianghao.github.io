@@ -1,3 +1,12 @@
+---
+title: SpringMVC 总结
+date: 2017-07-12 15:08:32
+categories:
+tags:
+     - SpringMVC
+     - 持久层
+     - Spring整合
+---
 ## Mybatis所处的位置
 Mybatis处在持久层，和数据库打交道
 

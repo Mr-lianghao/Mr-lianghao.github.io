@@ -1,3 +1,11 @@
+---
+title: SpringMVC 总结
+date: 2017-07-12 15:08:32
+categories:
+tags:
+     - SpringMVC
+     - 持久层
+---
 ## Mybatis所处的位置
 Mybatis处在持久层，和数据库打交道
 
@@ -7,7 +15,7 @@ Mybatis处在持久层，和数据库打交道
  2. 解决sql代码的硬编码
  3. 解决占位符硬编码
  4. 解决结果集硬编码
-
+<!-- more -->
 ## 我们使用Mybatis需要做的事
 1. 配置SqlMapConfig.xml，Mybatis全局配置文件
 2. mapper.xml,存放sql语句的文件
