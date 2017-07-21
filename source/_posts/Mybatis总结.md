@@ -28,7 +28,7 @@ Mybatis处在持久层，和数据库打交道
 ## 5.入门程序
 1.	创建java项目
 2.	创建lib目录导入jar
-![架构](Mybatis总结/包jar.png)
+![架构](Mybatis总结/jar.png)
 
 3.	编写SqlMapConfig.xml文件，在classpath下创建SqlMapConfig.xml,它的任务是数据源、事务管理，但是在后面这些事都是Spring进行整合，所以后面它的工作只是配置mapper.xml
 ```xml
