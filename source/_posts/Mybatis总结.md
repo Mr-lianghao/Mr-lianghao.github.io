@@ -8,22 +8,24 @@ tags:
      - 持久层
      - Spring整合
 ---
-## Mybatis所处的位置
+## 1.Mybatis所处的位置
 Mybatis处在持久层，和数据库打交道
 
-## 为什么需要Mybatis
+## 2.为什么需要Mybatis
 引入MyBatis的目的：主要是为了弥补JDBC的硬编码问题：
  1. 解决频发链接数据库
  2. 解决sql代码的硬编码
  3. 解决占位符硬编码
  4. 解决结果集硬编码
 <!-- more -->
-## 我们使用Mybatis需要做的事
+## 3.架构
+
+## 4.我们使用Mybatis需要做的事
 1. 配置SqlMapConfig.xml，Mybatis全局配置文件
 2. mapper.xml,存放sql语句的文件
 3. 通过sqlSessionFactory获取session进行操作，但这些都是Mybatis环境帮我们做的
 
-## 入门程序
+## 5.入门程序
  1. 导入jar包
  2. log4j
  3. SqlMapConfig.xml全局环境变量的配置

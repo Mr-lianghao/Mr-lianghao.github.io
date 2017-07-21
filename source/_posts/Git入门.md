@@ -1,6 +1,6 @@
 ---
 title: Git入门
-ategories: 
+categories: 
      - Git
 tags: #文章標籤 可以省略
      - Git
