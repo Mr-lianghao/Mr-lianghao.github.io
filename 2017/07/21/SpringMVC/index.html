@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SpringMVC 第一天 | Mr.Okey</title>
+  <title>SpringMVC | Mr.Okey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速入门">
-<meta name="keywords" content="Spring">
+  <meta name="description" content="1.SpringMVC介绍 表现层，负责接收用户的数据和分配处理以及分发转向 处理流程：  2.入门程序3.SpringMVC架构4.SpringMVC整合Mybatis5.参数绑定6.高级参数绑定7.Spring注解以及@RequestMapping注解的使用8.Controller返回值9.异常处理10.上传图片11.Json交互12.SpringMVC实现Restful13.拦截器">
+<meta name="keywords" content="SpringMVC,控制层">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringMVC 第一天">
-<meta property="og:url" content="http://yoursite.com/2017/07/09/SpringMVC/index.html">
+<meta property="og:title" content="SpringMVC">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/SpringMVC/index.html">
 <meta property="og:site_name" content="Mr.Okey">
-<meta property="og:description" content="快速入门">
-<meta property="og:updated_time" content="2017-07-20T08:17:16.354Z">
+<meta property="og:description" content="1.SpringMVC介绍 表现层，负责接收用户的数据和分配处理以及分发转向 处理流程：  2.入门程序3.SpringMVC架构4.SpringMVC整合Mybatis5.参数绑定6.高级参数绑定7.Spring注解以及@RequestMapping注解的使用8.Controller返回值9.异常处理10.上传图片11.Json交互12.SpringMVC实现Restful13.拦截器">
+<meta property="og:updated_time" content="2017-07-21T02:48:42.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringMVC 第一天">
-<meta name="twitter:description" content="快速入门">
+<meta name="twitter:title" content="SpringMVC">
+<meta name="twitter:description" content="1.SpringMVC介绍 表现层，负责接收用户的数据和分配处理以及分发转向 处理流程：  2.入门程序3.SpringMVC架构4.SpringMVC整合Mybatis5.参数绑定6.高级参数绑定7.Spring注解以及@RequestMapping注解的使用8.Controller返回值9.异常处理10.上传图片11.Json交互12.SpringMVC实现Restful13.拦截器">
   
     <link rel="alternative" href="/atom.xml" title="Mr.Okey" type="application/atom+xml">
   
@@ -137,7 +137,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-文章标签/" style="font-size: 10px;">Hexo# 文章标签</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 10px;">SpringMVC</a> <a href="/tags/Spring整合/" style="font-size: 10px;">Spring整合</a> <a href="/tags/持久层/" style="font-size: 10px;">持久层</a> <a href="/tags/版本库/" style="font-size: 10px;">版本库</a>
+                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring整合/" style="font-size: 10px;">Spring整合</a> <a href="/tags/持久层/" style="font-size: 10px;">持久层</a> <a href="/tags/控制层/" style="font-size: 10px;">控制层</a> <a href="/tags/版本库/" style="font-size: 10px;">版本库</a>
                     </div>
                 </section>
                 
@@ -208,8 +208,8 @@
       <div class="body-wrap"><article id="post-SpringMVC" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/07/09/SpringMVC/" class="article-date">
-      <time datetime="2017-07-09T05:06:09.537Z" itemprop="datePublished">2017-07-09</time>
+      <a href="/2017/07/21/SpringMVC/" class="article-date">
+      <time datetime="2017-07-21T02:28:55.000Z" itemprop="datePublished">2017-07-21</time>
 </a>
     </div>
   
@@ -222,7 +222,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SpringMVC 第一天
+      SpringMVC
     </h1>
   
 
@@ -230,14 +230,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/SpringMVC/">SpringMVC</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMVC/">SpringMVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制层/">控制层</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -247,7 +243,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><a id="more"></a>
+        <h2 id="1-SpringMVC介绍"><a href="#1-SpringMVC介绍" class="headerlink" title="1.SpringMVC介绍"></a>1.SpringMVC介绍</h2><ol>
+<li>表现层，负责接收用户的数据和分配处理以及分发转向</li>
+<li>处理流程：</li>
+</ol>
+<h2 id="2-入门程序"><a href="#2-入门程序" class="headerlink" title="2.入门程序"></a>2.入门程序</h2><h2 id="3-SpringMVC架构"><a href="#3-SpringMVC架构" class="headerlink" title="3.SpringMVC架构"></a>3.SpringMVC架构</h2><h2 id="4-SpringMVC整合Mybatis"><a href="#4-SpringMVC整合Mybatis" class="headerlink" title="4.SpringMVC整合Mybatis"></a>4.SpringMVC整合Mybatis</h2><h2 id="5-参数绑定"><a href="#5-参数绑定" class="headerlink" title="5.参数绑定"></a>5.参数绑定</h2><h2 id="6-高级参数绑定"><a href="#6-高级参数绑定" class="headerlink" title="6.高级参数绑定"></a>6.高级参数绑定</h2><h2 id="7-Spring注解以及-RequestMapping注解的使用"><a href="#7-Spring注解以及-RequestMapping注解的使用" class="headerlink" title="7.Spring注解以及@RequestMapping注解的使用"></a>7.Spring注解以及@RequestMapping注解的使用</h2><h2 id="8-Controller返回值"><a href="#8-Controller返回值" class="headerlink" title="8.Controller返回值"></a>8.Controller返回值</h2><h2 id="9-异常处理"><a href="#9-异常处理" class="headerlink" title="9.异常处理"></a>9.异常处理</h2><h2 id="10-上传图片"><a href="#10-上传图片" class="headerlink" title="10.上传图片"></a>10.上传图片</h2><h2 id="11-Json交互"><a href="#11-Json交互" class="headerlink" title="11.Json交互"></a>11.Json交互</h2><h2 id="12-SpringMVC实现Restful"><a href="#12-SpringMVC实现Restful" class="headerlink" title="12.SpringMVC实现Restful"></a>12.SpringMVC实现Restful</h2><h2 id="13-拦截器"><a href="#13-拦截器" class="headerlink" title="13.拦截器"></a>13.拦截器</h2>
       
       
         <div class="page-reward">
@@ -302,13 +302,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/07/09/SpringMVC/">SpringMVC 第一天</a></p>
+        <p><span>本文标题:</span><a href="/2017/07/21/SpringMVC/">SpringMVC</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Haozi 的个人博客">Haozi</a></p>
-        <p><span>发布时间:</span>2017年07月09日 - 13时06分</p>
-        <p><span>最后更新:</span>2017年07月20日 - 16时17分</p>
+        <p><span>发布时间:</span>2017年07月21日 - 10时28分</p>
+        <p><span>最后更新:</span>2017年07月21日 - 10时48分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/07/09/SpringMVC/" title="SpringMVC 第一天">http://yoursite.com/2017/07/09/SpringMVC/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/09/SpringMVC/　　作者: Haozi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/21/SpringMVC/" title="SpringMVC">http://yoursite.com/2017/07/21/SpringMVC/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/21/SpringMVC/　　作者: Haozi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -321,18 +321,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/07/12/Mybatis总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          SpringMVC 总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/07/17/Git入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git入门</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -343,7 +334,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#快速入门"><span class="toc-number">1.</span> <span class="toc-text">快速入门</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-SpringMVC介绍"><span class="toc-number">1.</span> <span class="toc-text">1.SpringMVC介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-入门程序"><span class="toc-number">2.</span> <span class="toc-text">2.入门程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-SpringMVC架构"><span class="toc-number">3.</span> <span class="toc-text">3.SpringMVC架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-SpringMVC整合Mybatis"><span class="toc-number">4.</span> <span class="toc-text">4.SpringMVC整合Mybatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-参数绑定"><span class="toc-number">5.</span> <span class="toc-text">5.参数绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-高级参数绑定"><span class="toc-number">6.</span> <span class="toc-text">6.高级参数绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Spring注解以及-RequestMapping注解的使用"><span class="toc-number">7.</span> <span class="toc-text">7.Spring注解以及@RequestMapping注解的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Controller返回值"><span class="toc-number">8.</span> <span class="toc-text">8.Controller返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-异常处理"><span class="toc-number">9.</span> <span class="toc-text">9.异常处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-上传图片"><span class="toc-number">10.</span> <span class="toc-text">10.上传图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Json交互"><span class="toc-number">11.</span> <span class="toc-text">11.Json交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-SpringMVC实现Restful"><span class="toc-number">12.</span> <span class="toc-text">12.SpringMVC实现Restful</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-拦截器"><span class="toc-number">13.</span> <span class="toc-text">13.拦截器</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -409,18 +400,16 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/07/12/Mybatis总结/" title="上一篇: SpringMVC 总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/07/09/hello-world/" title="下一篇: Hello World">
+            <a href="/2017/07/17/Git入门/" title="下一篇: Git入门">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/Git入门/">Git入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Mybatis总结/">SpringMVC 总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/SpringMVC/">SpringMVC 第一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/博客发布/">Start My Blog Trip — Power By Hexo</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/SpringMVC/">SpringMVC</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/Git入门/">Git入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/Mybatis总结/">SpringMVC 总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/博客发布/">MarkDown基本格式 — Power By Hexo</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
