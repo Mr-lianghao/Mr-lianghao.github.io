@@ -138,7 +138,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring整合/" style="font-size: 10px;">Spring整合</a> <a href="/tags/持久层/" style="font-size: 10px;">持久层</a> <a href="/tags/控制层/" style="font-size: 10px;">控制层</a> <a href="/tags/版本库/" style="font-size: 10px;">版本库</a>
+                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring整合/" style="font-size: 10px;">Spring整合</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/持久层/" style="font-size: 10px;">持久层</a> <a href="/tags/控制层/" style="font-size: 10px;">控制层</a> <a href="/tags/插入图片/" style="font-size: 10px;">插入图片</a> <a href="/tags/版本库/" style="font-size: 10px;">版本库</a>
                     </div>
                 </section>
                 
@@ -235,7 +235,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>架构：<br><img src="/2017/07/21/hexo博客加入图片/Mybatisjia.png" alt="架构"></p>
+        <p>例如：<br><img src="/2017/07/21/hexo博客加入图片/Mybatisjia.png" alt="架构"></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true</li>
+<li>在你的hexo目录下执行这样一句话npm install hexo-asset-image –save，这是下载安装一个可以上传本地图片的插件，来自dalao：dalao的git</li>
+<li>等待一小段时间后，再运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹</li>
+</ol>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><ol>
+<li>最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：<img src="/2017/07/21/hexo博客加入图片/xxxx/图片名.jpg" alt="你想输入的替代文字"></li>
+<li><strong>注意：</strong>xxxx是这个md文件的名字，也是同名文件夹的名字，你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。</li>
+<li>最后检查一下，hexo g生成页面后，进入public\2017\02\26\index.html文件中查看相关字段，可以发现，html标签内的语句是<img src="/2017/07/21/hexo博客加入图片/2017/02/26/xxxx/图片名.jpg">，而不是&lt;img src=”xxxx/图片名.jpg&gt;。这很重要，关乎你的网页是否可以真正加载你想插入的图片。</li>
+</ol>
 
       
       
@@ -246,6 +256,10 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插入图片/">插入图片</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
