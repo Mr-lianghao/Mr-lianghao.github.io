@@ -9,6 +9,7 @@ tags:
 ## 1.SpringMVC介绍
 1. 表现层，负责接收用户的数据和分配处理以及分发转向
 2. 处理流程：
+<!-- more -->
 [SpringMVC]: /img/SpringMVCliucheng.png "处理流程"
 ## 2.入门程序
 ## 3.SpringMVC架构
