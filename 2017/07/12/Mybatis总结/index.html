@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="Mr.Okey">
 <meta property="og:description" content="1.Mybatis所处的位置Mybatis处在持久层，和数据库打交道 2.为什么需要Mybatis引入MyBatis的目的：主要是为了弥补JDBC的硬编码问题：  解决频发链接数据库 解决sql代码的硬编码 解决占位符硬编码 解决结果集硬编码">
 <meta property="og:image" content="http://yoursite.com/2017/07/12/Mybatis总结/Mybatisjia.png">
-<meta property="og:image" content="http://yoursite.com/2017/07/12/Mybatis总结/包jar.png">
-<meta property="og:updated_time" content="2017-07-21T15:35:53.089Z">
+<meta property="og:image" content="http://yoursite.com/2017/07/12/Mybatis总结/jar.png">
+<meta property="og:updated_time" content="2017-07-21T15:40:57.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC 总结">
 <meta name="twitter:description" content="1.Mybatis所处的位置Mybatis处在持久层，和数据库打交道 2.为什么需要Mybatis引入MyBatis的目的：主要是为了弥补JDBC的硬编码问题：  解决频发链接数据库 解决sql代码的硬编码 解决占位符硬编码 解决结果集硬编码">
@@ -266,7 +266,7 @@
 </ol>
 <h2 id="5-入门程序"><a href="#5-入门程序" class="headerlink" title="5.入门程序"></a>5.入门程序</h2><ol>
 <li>创建java项目</li>
-<li><p>创建lib目录导入jar<br><img src="/2017/07/12/Mybatis总结/包jar.png" alt="架构"></p>
+<li><p>创建lib目录导入jar<br><img src="/2017/07/12/Mybatis总结/jar.png" alt="架构"></p>
 </li>
 <li><p>编写SqlMapConfig.xml文件，在classpath下创建SqlMapConfig.xml,它的任务是数据源、事务管理，但是在后面这些事都是Spring进行整合，所以后面它的工作只是配置mapper.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE configuration</span></div><div class="line">PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</div><div class="line">"http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 和spring整合后 environments配置将废除--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 使用jdbc事务管理--&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span> /&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 数据库连接池--&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8"</span> /&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">environment</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">environments</span>&gt;</span></div><div class="line">	</div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -414,7 +414,7 @@
         <p><span>本文标题:</span><a href="/2017/07/12/Mybatis总结/">SpringMVC 总结</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Haozi 的个人博客">Haozi</a></p>
         <p><span>发布时间:</span>2017年07月12日 - 15时08分</p>
-        <p><span>最后更新:</span>2017年07月21日 - 23时35分</p>
+        <p><span>最后更新:</span>2017年07月21日 - 23时40分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/07/12/Mybatis总结/" title="SpringMVC 总结">http://yoursite.com/2017/07/12/Mybatis总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/12/Mybatis总结/　　作者: Haozi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
