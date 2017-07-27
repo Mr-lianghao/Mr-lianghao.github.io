@@ -14,7 +14,8 @@ categories:
 ## 1.2 什么是TCP/IP
 TCP/IP 是供已连接因特网的计算机进行通信的通信协议。   
 TCP/IP 指传输控制协议/网际协议（Transmission Control Protocol / Internet Protocol）。   
-TCP/IP 定义了电子设备（比如计算机）如何连入因特网，以及数据如何在它们之间传输的标准。   
+TCP/IP 定义了电子设备（比如计算机）如何连入因特网，以及数据如何在它们之间传输的标准。 
+<!-- more -->  
 ## 1.3 TCP/IP内部
 在 TCP/IP 中包含一系列用于处理数据通信的协议：
 
