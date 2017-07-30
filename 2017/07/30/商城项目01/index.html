@@ -16,7 +16,9 @@
 <meta property="og:image" content="http://yoursite.com/2017/07/30/商城项目01/传统架构.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/30/商城项目01/1000并发.png">
 <meta property="og:image" content="http://yoursite.com/2017/07/30/商城项目01/10000并发.png">
-<meta property="og:updated_time" content="2017-07-30T07:37:59.474Z">
+<meta property="og:image" content="http://yoursite.com/2017/07/30/商城项目01/soa.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/30/商城项目01/商城架构.png">
+<meta property="og:updated_time" content="2017-07-30T07:53:12.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="商城项目01">
 <meta name="twitter:description" content="电商项目背景电商行业技术特点 技术新 技术范围广 分布式 高并发、集群、负载均衡、高可用 海量数据 业务复杂 系统安全">
@@ -262,9 +264,15 @@
 <h1 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h1><h2 id="功能列表"><a href="#功能列表" class="headerlink" title="功能列表"></a>功能列表</h2><p>后台管理系统：管理商品、订单、类目、商品规格属性、用户管理以及内容发布等功能。<br>前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作。<br>会员系统：用户可以在该系统中查询已下的订单、收藏的商品、我的优惠券、团购等信息。<br>订单系统：提供下单、查询订单、修改订单状态、定时处理订单。<br>搜索系统：提供商品的搜索功能。<br>单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息  </p>
 <p><img src="/2017/07/30/商城项目01/功能列表.png" alt="架构"></p>
 <h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><h3 id="传统架构"><a href="#传统架构" class="headerlink" title="传统架构"></a>传统架构</h3><p><img src="/2017/07/30/商城项目01/传统架构.png" alt="架构"></p>
-<h4 id="1000并发"><a href="#1000并发" class="headerlink" title="1000并发"></a>1000并发</h4><p><img src="/2017/07/30/商城项目01/1000并发.png" alt="架构"></p>
+<h4 id="1000并发"><a href="#1000并发" class="headerlink" title="1000并发"></a>1000并发</h4><p><img src="/2017/07/30/商城项目01/1000并发.png" alt="架构"><br>对于传统架构进行开发，假设每台tomcat服务器的最大并发访问量是500，那么1000并发就需要2台服务器做tomcat集群。</p>
 <h4 id="10000并发"><a href="#10000并发" class="headerlink" title="10000并发"></a>10000并发</h4><p><img src="/2017/07/30/商城项目01/10000并发.png" alt="架构"></p>
-<h3 id="soa架构"><a href="#soa架构" class="headerlink" title="soa架构"></a>soa架构</h3>
+<p>需要20台服务器做tomcat集群。当tomcat集群中节点数量增加，服务能力先增加后下降。<br>所以集群中节点数量不能太多，一般也就5个左右。</p>
+<p>需要按照功能点把系统拆分，拆分成独立的功能。单独为某一个节点添加服务器。需要系统之间配合才能完成整个业务逻辑。叫做分布式。</p>
+<p>分布式架构：多个子系统相互协作才能完成业务流程。系统之间需要进行通信。<br>集群：同一个工程部署到多台服务器上。<br>分布式架构：<br>把系统按照模块拆分成多个子系统。<br>优点：<br>1、把模块拆分，使用接口通信，降低模块之间的耦合度。<br>2、把项目拆分成若干个子项目，不同的团队负责不同的子项目。<br>3、增加功能时只需要再增加一个子项目，调用其他系统的接口就可以。<br>4、可以灵活的进行分布式部署。  </p>
+<p>缺点：<br>1、系统之间交互需要使用远程通信，接口开发增加工作量。<br>2、各个模块有一些通用的业务逻辑无法共用。  </p>
+<h3 id="soa架构"><a href="#soa架构" class="headerlink" title="soa架构"></a>soa架构</h3><p>SOA：Service Oriented Architecture面向服务的架构。也就是把工程拆分成服务层、表现层两个工程。服务层中包含业务逻辑和持久层，只需要对外提供服务即可。表现层只需要处理和页面的交互，业务逻辑都是调用服务层的服务来实现。<br><img src="/2017/07/30/商城项目01/soa.png" alt="架构"></p>
+<h3 id="商城架构"><a href="#商城架构" class="headerlink" title="商城架构"></a>商城架构</h3><p>商城的架构是基于soa架构，表现层就是该项目的各个功能模块，把业务逻辑放在单独的服务层，当然，该层还包含了DAO的的相关处理。其中dubbo是alibaba的一个中间件，类似于webservice，因为表现层和服务层已经分开，所以当需要调用相关业务的时候，需要我们进行相关协议的调用。当用户的并发搜索量很大的时候，可以使用Redis进行全文检索。<br><img src="/2017/07/30/商城项目01/商城架构.png" alt="架构"></p>
+<h1 id="工程搭建——maven工程"><a href="#工程搭建——maven工程" class="headerlink" title="工程搭建——maven工程"></a>工程搭建——maven工程</h1>
       
       
         <div class="page-reward">
@@ -322,7 +330,7 @@
         <p><span>本文标题:</span><a href="/2017/07/30/商城项目01/">商城项目01</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Haozi 的个人博客">Haozi</a></p>
         <p><span>发布时间:</span>2017年07月30日 - 15时19分</p>
-        <p><span>最后更新:</span>2017年07月30日 - 15时37分</p>
+        <p><span>最后更新:</span>2017年07月30日 - 15时53分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/07/30/商城项目01/" title="商城项目01">http://yoursite.com/2017/07/30/商城项目01/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/30/商城项目01/　　作者: Haozi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -360,7 +368,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#电商项目背景"><span class="toc-number">1.</span> <span class="toc-text">电商项目背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#电商行业技术特点"><span class="toc-number">2.</span> <span class="toc-text">电商行业技术特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#商城项目简介"><span class="toc-number">3.</span> <span class="toc-text">商城项目简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目架构"><span class="toc-number">4.</span> <span class="toc-text">项目架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#功能列表"><span class="toc-number">4.1.</span> <span class="toc-text">功能列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统架构"><span class="toc-number">4.2.</span> <span class="toc-text">系统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统架构"><span class="toc-number">4.2.1.</span> <span class="toc-text">传统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1000并发"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">1000并发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10000并发"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">10000并发</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#soa架构"><span class="toc-number">4.2.2.</span> <span class="toc-text">soa架构</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#电商项目背景"><span class="toc-number">1.</span> <span class="toc-text">电商项目背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#电商行业技术特点"><span class="toc-number">2.</span> <span class="toc-text">电商行业技术特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#商城项目简介"><span class="toc-number">3.</span> <span class="toc-text">商城项目简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目架构"><span class="toc-number">4.</span> <span class="toc-text">项目架构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#功能列表"><span class="toc-number">4.1.</span> <span class="toc-text">功能列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统架构"><span class="toc-number">4.2.</span> <span class="toc-text">系统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统架构"><span class="toc-number">4.2.1.</span> <span class="toc-text">传统架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1000并发"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">1000并发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10000并发"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">10000并发</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#soa架构"><span class="toc-number">4.2.2.</span> <span class="toc-text">soa架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#商城架构"><span class="toc-number">4.2.3.</span> <span class="toc-text">商城架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工程搭建——maven工程"><span class="toc-number">5.</span> <span class="toc-text">工程搭建——maven工程</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
