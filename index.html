@@ -138,7 +138,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTTP协议/" style="font-size: 10px;">HTTP协议</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/SSM/" style="font-size: 15px;">SSM</a> <a href="/tags/SpringMVC/" style="font-size: 15px;">SpringMVC</a> <a href="/tags/Spring整合/" style="font-size: 10px;">Spring整合</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/传输协议/" style="font-size: 10px;">传输协议</a> <a href="/tags/协议/" style="font-size: 10px;">协议</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/商城项目/" style="font-size: 15px;">商城项目</a> <a href="/tags/啊哈算法/" style="font-size: 10px;">啊哈算法</a> <a href="/tags/持久层/" style="font-size: 10px;">持久层</a> <a href="/tags/排序算法/" style="font-size: 10px;">排序算法</a> <a href="/tags/控制层/" style="font-size: 10px;">控制层</a> <a href="/tags/插入图片/" style="font-size: 10px;">插入图片</a> <a href="/tags/版本库/" style="font-size: 10px;">版本库</a>
+                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTTP协议/" style="font-size: 10px;">HTTP协议</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/SSM/" style="font-size: 15px;">SSM</a> <a href="/tags/SpringMVC/" style="font-size: 15px;">SpringMVC</a> <a href="/tags/Spring整合/" style="font-size: 10px;">Spring整合</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/svn教程/" style="font-size: 10px;">svn教程</a> <a href="/tags/传输协议/" style="font-size: 10px;">传输协议</a> <a href="/tags/协议/" style="font-size: 10px;">协议</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/商城项目/" style="font-size: 15px;">商城项目</a> <a href="/tags/啊哈算法/" style="font-size: 10px;">啊哈算法</a> <a href="/tags/持久层/" style="font-size: 10px;">持久层</a> <a href="/tags/排序算法/" style="font-size: 10px;">排序算法</a> <a href="/tags/控制层/" style="font-size: 10px;">控制层</a> <a href="/tags/插入图片/" style="font-size: 10px;">插入图片</a> <a href="/tags/版本库/" style="font-size: 10px;">版本库</a>
                     </div>
                 </section>
                 
@@ -207,6 +207,249 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-svn使用教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/04/svn使用教程/" class="article-date">
+      <time datetime="2017-08-04T10:29:10.000Z" itemprop="datePublished">2017-08-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/04/svn使用教程/">svn使用教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="svn简介-为什么要使用svn"><a href="#svn简介-为什么要使用svn" class="headerlink" title="svn简介-为什么要使用svn"></a>svn简介-为什么要使用svn</h1><p>在编写程序的过程中，每个程序员都会生成很多不同的版本，这就需要程序员有效的管理代码，在需要的时候可以迅速，准确取出相应的版本。</p>
+<h1 id="Subversion是什么？"><a href="#Subversion是什么？" class="headerlink" title="Subversion是什么？"></a>Subversion是什么？</h1><p>它是一个自由/开源的版本控制系统，一组文件存放在中心版本库，记录每一次文件和目录的修改，Subversion允许把数据恢复到早期版本，或是检查数据修改的历史，Subversion可以通过网络访问它的版本库，从而使用户在不同的电脑上进行操作。</p>
+<h1 id="一：SVN服务器搭建和使用。"><a href="#一：SVN服务器搭建和使用。" class="headerlink" title="一：SVN服务器搭建和使用。"></a>一：SVN服务器搭建和使用。</h1><h2 id="1-首先来下载和搭建SVN服务器"><a href="#1-首先来下载和搭建SVN服务器" class="headerlink" title="1.首先来下载和搭建SVN服务器"></a>1.首先来下载和搭建SVN服务器</h2><p>下载地址如下: <a href="http://subversion.apache.org/packages.html，进入网址后，滚动到浏览器最底部看到如下截图：" target="_blank" rel="external">http://subversion.apache.org/packages.html，进入网址后，滚动到浏览器最底部看到如下截图：</a></p>
+<p> <img src="/2017/08/04/svn使用教程/1.png" alt="架构"></p>
+<p>个人认为最好用VisualSVN server 服务端和 TortoiseSVN客户端搭配使用. 点开上面的VisualSVN连接,下载VisualSVN server,下载完成后双击安装，如下图：</p>
+<p> <img src="/2017/08/04/svn使用教程/2.png" alt="架构"></p>
+<p>点击Next下一步，如下：</p>
+<p> <img src="/2017/08/04/svn使用教程/3.png" alt="架构"></p>
+<p>然后再点击Next项，下一步，如下：</p>
+<p> <img src="/2017/08/04/svn使用教程/4.png" alt="架构"></p>
+<p>点击【Next】 如下：</p>
+<p> <img src="/2017/08/04/svn使用教程/5.png" alt="架构"></p>
+<p> <img src="/2017/08/04/svn使用教程/6.png" alt="架构"></p>
+<p>Location是指VisualSVN Server的安装目录,Repositorys是指定你的版本库目录.Server Port指定一个端口,Use secure connection勾山表示使用安全连接,<br>点击Next,进入下一步,如下图:<br> <img src="/2017/08/04/svn使用教程/7.png" alt="架构"></p>
+<p>再点击【Install】<br>点击【Finish】即可完成安装。安装完成后,启动VisualSVN Server Manager,如图:</p>
+<p> <img src="/2017/08/04/svn使用教程/8.png" alt="架构"></p>
+<p>可以在窗口的右边看到版本库的一些信息,比如状态,日志,用户认证,版本库等.<br>要建立版本库,需要右键单击左边窗口的Repositores,如下图:</p>
+<p> <img src="/2017/08/04/svn使用教程/9.png" alt="架构"></p>
+<p>在弹出的右键菜单中选择Create New Repository或者新建-&gt;Repository:</p>
+<p> <img src="/2017/08/04/svn使用教程/10.png" alt="架构"></p>
+<p>进入下一步，如下图：</p>
+<p> <img src="/2017/08/04/svn使用教程/11.png" alt="架构"> </p>
+<p>点击【下一步】，如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/12.png" alt="架构"></p>
+<p>点击【create】，如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/13.png" alt="架构"></p>
+<p>点击【Finish】即可完成基本创建。</p>
+<h2 id="2-checkout项目文件。"><a href="#2-checkout项目文件。" class="headerlink" title="2. checkout项目文件。"></a>2. checkout项目文件。</h2><p>新建或者进入目录下(比如qianduan1)，右键 –&gt; Svn Checkout –&gt;</p>
+<p><img src="/2017/08/04/svn使用教程/14.png" alt="架构"></p>
+<p>其中URL我可以在SVN服务器获取到，我在myRepositories下右键新建文件</p>
+<p><img src="/2017/08/04/svn使用教程/15.png" alt="架构"></p>
+<p>qianduan文件被建立，然后比如我这样右键 –&gt; copy下</p>
+<p><img src="/2017/08/04/svn使用教程/16.png" alt="架构"></p>
+<p>即可。  </p>
+<p>将复制的版本库URL粘贴上,如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/17.png" alt="架构"></p>
+<p>点击【ok】按钮后，就可以检索出来，如下：</p>
+<p><img src="/2017/08/04/svn使用教程/18.png" alt="架构"></p>
+<p>如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/19.png" alt="架构"></p>
+<p>注意事项：<br>   .svn这个隐藏目录记录着两项关键信息：工作文件的基准版本和一个本地副本最后更新的时间戳，千万不要手动修改或者删除这个.svn隐藏目录和里面的文件!!,否则将会导致你本地的工作拷贝(静态试图)被破坏，无法再进行操作。</p>
+<h2 id="3-TortoiseSVN图标介绍"><a href="#3-TortoiseSVN图标介绍" class="headerlink" title="3.  TortoiseSVN图标介绍"></a>3.  TortoiseSVN图标介绍</h2><p><img src="/2017/08/04/svn使用教程/20.png" alt="架构"></p>
+<p> 一个新检出的工作复本使用绿色的对勾重载，表示Subversion状态正常。</p>
+<p><img src="/2017/08/04/svn使用教程/21.png" alt="架构"></p>
+<p>在你开始编辑一个文件之后，状态就变成了已修改，而图标重载已变成了红色感叹号。通过这种方式，你可以很容易地看出那些文件从你上次更新工作复本被修改过，且需要提交。</p>
+<p><img src="/2017/08/04/svn使用教程/22.png" alt="架构"></p>
+<p>如果在提交的过程中出现了冲突，图标就会变成了黄色感叹号。</p>
+<p><img src="/2017/08/04/svn使用教程/23.png" alt="架构"></p>
+<p>加号告诉你有一个文件或者目录已经被计划加入到版本控制中。</p>
+<h2 id="4-TortoiseSVN-Client基础操作"><a href="#4-TortoiseSVN-Client基础操作" class="headerlink" title="4. TortoiseSVN Client基础操作:"></a>4. TortoiseSVN Client基础操作:</h2><h3 id="4-1-SVN检出-SVN-Checkout"><a href="#4-1-SVN检出-SVN-Checkout" class="headerlink" title="4.1 SVN检出(SVN Checkout)"></a>4.1 SVN检出(SVN Checkout)</h3><p>  在文件夹或者目录下单击右键 –&gt; 选择SVN检出，如下图所示</p>
+<p><img src="/2017/08/04/svn使用教程/24.jpg" alt="架构"></p>
+<p>点击后，在弹开窗口的版本库url框中输入版本库的目录地址，然后点击确定，如下图</p>
+<p><img src="/2017/08/04/svn使用教程/25.png" alt="架构"></p>
+<p>再点击ok按钮后，如下图：<br>在弹出的对话框中输入用户名和密码，验证成功后，项目文件开始从远程服务器下载到本地工作目录中。</p>
+<p><img src="/2017/08/04/svn使用教程/26.png" alt="架构"></p>
+<p>点击ok按钮后，即可获取完成</p>
+<h3 id="4-2-增加-Add"><a href="#4-2-增加-Add" class="headerlink" title="4.2 增加(Add)"></a>4.2 增加(Add)</h3><p>在test项目文件下，新建一个b.txt文件，提交到版本库的方法如下2种：</p>
+<ol>
+<li><p>先提到变更列表中，再commit到配置库中，选择新增文件，右键SVN菜单执行“Add“操作提交到”变更列表中”，然后右键SVN菜单执行”SVN Commit”提交到版本库中。</p>
+</li>
+<li><p>不提交到变更列表中，而是直接commit配置库中，选择该文件，右键svn菜单执行”SVN Commit”操作。</p>
+</li>
+</ol>
+<h3 id="4-3-删除-Delete"><a href="#4-3-删除-Delete" class="headerlink" title="4.3 删除(Delete)"></a>4.3 删除(Delete)</h3><p>如果被删除的文件还未入版本库，则可以直接使用操作系统的删除操作删除该文件。</p>
+<pre><code>如果被删除的文件已入版本库，则删除的方法如下：
+</code></pre><ol>
+<li>选择被删除文件，右键svn菜单执行”delete”操作，然后选择被删除文件的父目录，右键svn菜单执行”SVN Commit”.<br>使用操作系统的删除操作删除该文件，然后选择被删除文件的父目录，右键svn菜单执行”SVN Commit”,在变更列表中选择被删除的文件。如下图：</li>
+</ol>
+<p><img src="/2017/08/04/svn使用教程/27.png" alt="架构"></p>
+<h3 id="4-4-改名-Rename"><a href="#4-4-改名-Rename" class="headerlink" title="4.4 改名(Rename)"></a>4.4 改名(Rename)</h3><p>修改文件名，选中需要重命名的文件或文件夹，然后右键“TortoiseSVNàRename“，在弹出的对话框中输入新名称，点击”ok”按钮，并将修改文件名后的文件或文件夹通过 “SVN Commit”提交到SVN服务器上。</p>
+<h3 id="4-5-SVN还原-SVN-Revert"><a href="#4-5-SVN还原-SVN-Revert" class="headerlink" title="4.5 SVN还原(SVN Revert)"></a>4.5 SVN还原(SVN Revert)</h3><p>右击想要回退的文件或者文件夹，在TortoiseSVN弹出菜单中选择”Update to reversion…” 然后会弹出一个窗口，如下：</p>
+<p><img src="/2017/08/04/svn使用教程/28.png" alt="架构"></p>
+<p>比如说我们要回退到第10个版本只需要在Revision中填写相应的版本号，然后点击ok即可。</p>
+<h3 id="4-6-检查更新-Check-for-modifications"><a href="#4-6-检查更新-Check-for-modifications" class="headerlink" title="4.6 检查更新(Check for modifications)"></a>4.6 检查更新(Check for modifications)</h3><p>此功能可以显示你所做的修改有哪些还没有提交的，此功能不光能看到对文件的修改变化，所有的变化都能看到，包括增加文件或者目录，删除文件或者目录，移动文件或者目录等，如果你点击了检查版本库，那你还可以看到版本库里的改动，既别人提交了哪些文件的改动，你还没更新到本地，如下：</p>
+<p><img src="/2017/08/04/svn使用教程/29.png" alt="架构"></p>
+<h3 id="4-7-SVN更新-SVN-Update"><a href="#4-7-SVN更新-SVN-Update" class="headerlink" title="4.7 SVN更新(SVN Update)"></a>4.7 SVN更新(SVN Update)</h3><p>更新本地代码与SVN服务器上最新的版本一致，只要在需要更新的文件夹上点击右键或者在文件下空白处点击右键，选择”SVN Update” (获取指定版本中的内容，点击右键执行SVN菜单中的“Update to reversion“)，就可以了。</p>
+<h4 id="4-7-1-如何解决冲突文件"><a href="#4-7-1-如何解决冲突文件" class="headerlink" title="4.7.1 如何解决冲突文件"></a>4.7.1 如何解决冲突文件</h4><p>对于每个冲突的文件Subversion在你的目录下放置了三个文件：如下：</p>
+<p><img src="/2017/08/04/svn使用教程/30.png" alt="架构"></p>
+<p>为什么会产生冲突代码呢？原因很简单就是因为不同的人，同时修改了同一个文件的同一个地方，这时候，他提交了，我没有提交，我就提交不了，这个时候我们要进行先更新，然后在进行提交即可，那如果产生冲突，会生成如上3个文件。 </p>
+<p><strong>解决方案如下：</strong></p>
+<p><img src="/2017/08/04/svn使用教程/31.png" alt="架构"></p>
+<p>进行提交，还是提交不了，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/32.png" alt="架构"><br>为什么？因为冲突会产生上面的三个文件，有上面3个文件存在肯定提交不了，这三个文件代码及解释如下：</p>
+<p>1.txt.mine 是冲突前自己的文件。可以看下内容如下：</p>
+<pre><code> aaaasdf11222333 dderderder
+
+ 2.  1.txt.r4 是冲突前本地的版本文件
+
+内容如下：aaaasdf11222333
+
+ 3.  1.txt.r5  是别人赶在你之前提交的版本
+</code></pre><p> 内容如下： b<br>其中,&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;.mine …..=======之间的代码是你自己的，而======……&gt;&gt;&gt;&gt;&gt;&gt;&gt;.r5是别人与你冲突的代码部分<br>这样就不难理解为什么会产生冲突这种奇怪的东西了，因为你们修改的同一块代码，当然会产生冲突。</p>
+<p>解决方案如下：</p>
+<p>假如我现在的1.txt中的冲突内容如下：</p>
+<pre><code>  &lt;&lt;&lt;&lt;&lt;&lt;&lt; .mine  
+   6666666666666600000  
+   =======  
+  66666666666aaaaaaaaaa666  
+  &gt;&gt;&gt;&gt;&gt;&gt;&gt; .r16  
+
+前面说过  &lt;&lt;&lt;&lt;&lt;&lt;&lt; .mine …… ======
+</code></pre><p>……之间的代码是我未产生冲突之前修改的代码，======= ………&gt;&gt;&gt;&gt;&gt;&gt;&gt; .r16 这中间……的代码是别人与我冲突代码的部分，从上面的代码可以看到 aaaaaaaaa是我同事新增的 ,00000是我后增加的。</p>
+<ol>
+<li>使用revert(回滚)操作，该操作表示用户放弃自己的更新代码，然后直接提交，这个时候你的代码就会使服务器上最新的代码，即A用户提交的新代码，你的代码不会被提交，如下所示：<br><img src="/2017/08/04/svn使用教程/33.png" alt="架构"></li>
+</ol>
+<p><img src="/2017/08/04/svn使用教程/34.png" alt="架构"></p>
+<p>点击ok按钮后 可以看到其他三个文件都自动删掉了，1.txt代码变成如下代码：<br>66666666666aaaaaaaaaa666<br>也就是a用户提交的代码，我自己更新的代码需要自己动手复制进去即可提交commit。  </p>
+<ol>
+<li>假如我现在3.txt产生冲突代码如下：</li>
+</ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; .mine<br>333333338888888888888=======<br>3333cccccccccc3333&gt;&gt;&gt;&gt;&gt;&gt;&gt; .r16  </p>
+<p>通过第一点我们知道，333333338888888888888这个内容是我修改后，未产生冲突之前的内容，3333cccccccccc3333这个代码是A用户提交的代码，从上面得知 A用户新增内容是ccccccc，而我新增的内容是8888888。<br>那么第二种解决方法如下：</p>
+<p>选择文件-&gt;右键Editconficts：这种方法需要冲突双方经过协商之后将代码更改统一之后再提交。不仅解决了冲突而且还保证了代码是正确的，因为只有一方的代码被提交.<br><img src="/2017/08/04/svn使用教程/35.png" alt="架构"></p>
+<p>如上图所示，红色的部分是冲突代码：theirs表示当前服务器端最新的代码，Mine表示自己修改后的代码，Merged表示合并后的代码。点击红色后右键选择：use this text block就可以将该部分代码作为合并后的代码</p>
+<p>接下来再说说由于冲突导致重要代码被覆盖的情况。冲突发生时如果采取的措施不对可能会导致部分代码丢失，如果想要还原之前的代码也很容易。</p>
+<p>选择文件-&gt;右键选择show log在这里面你可以看见之前提交的所有版本，找到你想要恢复的版本右键选择revert to this version 就可以恢复了.</p>
+<h3 id="4-8-SVN提交-SVN-Commit"><a href="#4-8-SVN提交-SVN-Commit" class="headerlink" title="4.8 SVN提交(SVN Commit)"></a>4.8 SVN提交(SVN Commit)</h3><p>Svn的提交是将在工作空间做的修改进行提交，包括文件内容的修改，文件或目录的添加，删除，命名，移动等操作。如下图所示:<br><img src="/2017/08/04/svn使用教程/36.png" alt="架构"></p>
+<h3 id="4-9-显示日志-Show-log"><a href="#4-9-显示日志-Show-log" class="headerlink" title="4.9 显示日志(Show log)"></a>4.9 显示日志(Show log)</h3><p>通过此功能可以查到谁，什么时候，对那个目录下的那些文件进行了那些操作，如下图：<br><img src="/2017/08/04/svn使用教程/37.png" alt="架构"></p>
+<h3 id="4-10-版本库浏览-Repo-browser"><a href="#4-10-版本库浏览-Repo-browser" class="headerlink" title="4.10 版本库浏览(Repo-browser)"></a>4.10 版本库浏览(Repo-browser)</h3><p>此功能是用来浏览需要查看的资料库，在本地文件夹下点击右键，选择TortoiseSVNàRepo-browser,在弹出的对话框中输入资料库地址，再输入用户名和密码，就能查看到你需要查看到版本库的内容，在这你还能看到那些文件被谁锁定了，如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/38.png" alt="架构"></p>
+<h1 id="三：创建分支合并相互操作"><a href="#三：创建分支合并相互操作" class="headerlink" title="三：创建分支合并相互操作"></a>三：创建分支合并相互操作</h1><p>项目中为何要创建分支，及合并？</p>
+<p>比如我现在项目所有的文件放在主干上(trunk)中，由于需求的变更，需要增加新的需求，但是我们主干上还要继续往下开发，在此我们可以新建一个分支，来做增加新的需求那一块，主干上继续开发，等分支上代码没有问题的时候，再合并到主干上来。</p>
+<p>创建分支的最大的目的就是跟主线进行并行开发时候不影响主线的开发。</p>
+<p>如何操作？</p>
+<p>假如我本地新建一个文件夹test下有2个文件夹trunk(存放主干上的代码)和branch(存放分支上的代码)，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/39.png" alt="架构"></p>
+<ol>
+<li>先提取主干上的代码。</li>
+</ol>
+<p>点击trunk –&gt; 鼠标右键 –&gt; 点击SVN Checkout –&gt; 弹出一个对话框，如下图所示：<br><img src="/2017/08/04/svn使用教程/40.png" alt="架构"></p>
+<p>其中上面的URL是从服务器VisualSVN Server上获取的，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/41.png" alt="架构"></p>
+<p> 直接右键qianduan3 –&gt; Copy URL to Clipboard 即可。</p>
+<p>其中qianduan3项目有如下文件，如下图所示： </p>
+<p><img src="/2017/08/04/svn使用教程/42.png" alt="架构"></p>
+<p>最后点击上面的checkout按钮后，就可以在主干上把代码从远程服务器上获取到，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/43.png" alt="架构"></p>
+<ol>
+<li>新建分支</li>
+</ol>
+<p>从trunk（主干上）创建分支(branch)步骤如下：</p>
+<p>右键trunk –&gt; branch/Tag 如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/44.jpg" alt="架构"></p>
+<p>在弹出的对话框如下图：</p>
+<p><img src="/2017/08/04/svn使用教程/45.jpg" alt="架构"></p>
+<p>点击ok按钮后，就可以在VisualSVN Serval服务器上新增newBranch，是从如上服务器qianduan3上的文件拷贝一份的，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/46.png" alt="架构"></p>
+<p>现在我们可以再来看看本地branch文件夹了，我现在直接进入branch文件下，右键 –&gt; Chenckout下，就可以把newBranch下的所有文件提取出来了，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/47.png" alt="架构"></p>
+<p><img src="/2017/08/04/svn使用教程/48.png" alt="架构"></p>
+<p>点击ok按钮就可以把文件提取出来了，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/49.png" alt="架构"></p>
+<p>分支目前建立在svn的服务器端，本地并没有更新，对本地branch文件夹 右键–&gt; update即可，就可以更新到分支代码，如下所示：</p>
+<p><img src="/2017/08/04/svn使用教程/50.png" alt="架构"></p>
+<ol>
+<li><p>合并分支到主干上</p>
+<p>比如我现在对branch分支上新增3.txt文件，然后提交上去，如下所示：</p>
+</li>
+</ol>
+<p><img src="/2017/08/04/svn使用教程/51.png" alt="架构"></p>
+<p>我现在想把分支上的代码3.txt合并到主干上trunk，现在要怎么合并呢？步骤如下：</p>
+<p>回到我们刚刚的主干（trunk）文件夹下，鼠标右键该文件夹 –&gt; TortoiseSVN –&gt; Merge 如下图所示：52.jpg<br><img src="/2017/08/04/svn使用教程/52.jpg" alt="架构"></p>
+<p>在弹出的窗口，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/53.jpg" alt="架构"></p>
+<p>接着点击【Next】下一步，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/54.jpg" alt="架构"></p>
+<p>再接着【Next】下一步，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/55.jpg" alt="架构"><br><img src="/2017/08/04/svn使用教程/56.png" alt="架构"></p>
+<p>就可以看到主干trunk上多加了一个3.txt，就是从分支上合并过来的。</p>
+<ol>
+<li>合并主干到分支。</li>
+</ol>
+<p>如果主干上有一些更新，比如说jar包更新等等，那么这些要更新到分支上去，如何操作呢？比如我现在在主干上新建一个4.txt文件，比如如下：</p>
+<p><img src="/2017/08/04/svn使用教程/57.png" alt="架构"></p>
+<p>我现在的分支上目录如下：</p>
+<p><img src="/2017/08/04/svn使用教程/58.png" alt="架构"></p>
+<p>现在是想把主干上的4.txt合并到分支上来，要如何操作？<br>步骤如下，还是和刚刚操作类似.  </p>
+<p>我们在分支点击branch –&gt; 右键TortoiseSVN –&gt; Merge 如下图所示：<br><img src="/2017/08/04/svn使用教程/59.jpg" alt="架构"></p>
+<p>在弹出新窗口后，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/60.jpg" alt="架构"></p>
+<p>接着点击【Next】下一步，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/61.jpg" alt="架构"></p>
+<p>继续下一步，如下图：<br><img src="/2017/08/04/svn使用教程/62.jpg" alt="架构"></p>
+<p>最后直接merge，就可以看到分支branch上也有主干上的4.txt文件了，也就是说，合并主干到分支上也是可以的，如下图所示：</p>
+<p><img src="/2017/08/04/svn使用教程/63.png" alt="架构"></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn教程/">svn教程</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-商城项目00" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -772,79 +1015,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/07/21/SpringMVC/#more">阅读更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Git入门" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/07/17/Git入门/" class="article-date">
-      <time datetime="2017-07-17T11:27:47.206Z" itemprop="datePublished">2017-07-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/17/Git入门/">Git入门</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <hr>
-<h2 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h2><ol>
-<li>创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：</li>
-<li>通过git init命令把这个目录变成Git可以管理的仓库</li>
-<li>瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），<br>细心的读者可以发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，<br>没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</li>
-</ol>
-<h2 id="2-版本库添加文件"><a href="#2-版本库添加文件" class="headerlink" title="2. 版本库添加文件　　"></a>2. 版本库添加文件　　</h2>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Git/">Git</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本库/">版本库</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/07/17/Git入门/#more">阅读更多 >></a>
         </p>
       
       <div class="clearfix"></div>
